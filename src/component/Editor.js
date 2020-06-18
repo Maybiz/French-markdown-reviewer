@@ -30,6 +30,7 @@ const Editor = ({addNewInput, input}) => {
 
 	return (
 		<div>
+			<div className="editor--header"><h2>Editeur</h2></div>
 			<textarea id="editor" value={input.reducers} onChange={handleChange}></textarea>
 		</div>
 	)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import { connect } from 'react-redux'
 import marked from 'marked'
 
@@ -9,7 +9,13 @@ const mapStateToProps = state => {
 }
 
 const Preview = props => {
-	return <div dangerouslySetInnerHTML={{ __html: marked(props.input.reducers) }} id="preview"></div>
+	return (
+	<Fragment>
+		<div className="editor--preview"><h2>Preview</h2></div>
+		<div dangerouslySetInnerHTML={{ __html: marked(props.input.reducers) }} id="preview"></div>
+	</Fragment>
+	
+	)
 }
 
 export default connect(mapStateToProps, null)(Preview)
