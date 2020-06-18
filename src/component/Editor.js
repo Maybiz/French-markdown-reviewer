@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import addInput from '../actions/actions'
 
@@ -16,15 +16,21 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const Editor = props => {
+const Editor = ({addNewInput, input}) => {
+
+   const startingText = '# Welcome to my React Markdown Previewer!'
 
 	const handleChange = e => {
-		props.addNewInput(e.target.value)
-	}
+		addNewInput(e.target.value)
+   }
+   
+   useEffect(() => {
+      addNewInput(startingText)
+   }, [])
 
 	return (
 		<div>
-			<textarea id="editor" value={props.input.reducers} onChange={handleChange}></textarea>
+			<textarea id="editor" value={input.reducers} onChange={handleChange}></textarea>
 		</div>
 	)
 }
