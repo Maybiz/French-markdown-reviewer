@@ -38,7 +38,7 @@ textarea {
    background: #ffffff;
 }
 
-.editor__header, .preview__header {
+.editor__header {
    height: 40px;
    background:  #eaecec;
    text-align: center;
@@ -50,3 +50,21 @@ textarea {
    border-bottom: none;
 }
 
+.preview__header {
+   display: flex;
+   position: relative;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   width: 80%;
+   margin: auto;
+   border: 1px solid #ccc;
+   border-top-left-radius: 0.5em;
+   border-top-right-radius: 0.5em;
+
+   .htmlMode {
+      position: absolute;
+      right: 10px;
+   }
+
+}
