@@ -18,7 +18,7 @@ const Preview = props => {
 	useEffect(() => {
 		const preview = document.getElementById('preview')
 
-		!htmlMode ? (preview.innerHTML = marked(props.input.reducers)) : (preview.textContent = marked(props.input.reducers))
+		!htmlMode ? (preview.innerHTML = marked(props.input.reducers)) : (preview.innerText = marked(props.input.reducers)) //innerText better than textContent for formating carriage return
 	}, [htmlMode, props.input.reducers])
 
 	marked.setOptions({
@@ -41,5 +41,3 @@ const Preview = props => {
 }
 
 export default connect(mapStateToProps, null)(Preview)
-
-//{ __html: marked(props.input.reducers) }
