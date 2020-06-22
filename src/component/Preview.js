@@ -30,9 +30,11 @@ const Preview = props => {
 		<Fragment>
 			<div className="preview__header">
 				<h2>Preview</h2>
-				<button className="htmlMode" onClick={handleMode}>
-					Mode HTML
-				</button>
+				<div className="htmlMode">
+					<h4>Mode HTML</h4>
+					<input type="checkbox" id="toggle" className="checkbox" onClick={handleMode} />
+					<label htmlFor="toggle" className="switch"></label>
+				</div>
 			</div>
 
 			<div id="preview"></div>
