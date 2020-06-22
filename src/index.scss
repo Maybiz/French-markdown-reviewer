@@ -31,7 +31,7 @@ textarea {
 #preview {
    width: 80%;
    min-height: 300px;
-   margin: 0 auto;
+   margin: 0 auto 30px auto;
    border: 1px solid #ccc;
    border-bottom-left-radius: 0.5em;
    border-bottom-right-radius: 0.5em;
@@ -39,7 +39,7 @@ textarea {
 }
 
 .editor__header {
-   height: 40px;
+   height: 30px;
    background:  #eaecec;
    text-align: center;
    margin: auto;
@@ -55,7 +55,7 @@ textarea {
    position: relative;
    align-items: center;
    justify-content: center;
-   height: 40px;
+   height: 30px;
    width: 80%;
    margin: auto;
    border: 1px solid #ccc;
