@@ -16,7 +16,7 @@ const Preview = props => {
 	const handleMode = () => setHtmlMode(!htmlMode)
 
 	useEffect(() => {
-		const preview = document.getElementById('preview')
+		const preview = document.getElementById('preview__content')
 
 		!htmlMode ? (preview.innerHTML = marked(props.input.reducers)) : (preview.innerText = marked(props.input.reducers)) //innerText better than textContent for formating carriage return
 	}, [htmlMode, props.input.reducers])
@@ -30,14 +30,14 @@ const Preview = props => {
 		<Fragment>
 			<div className="preview__header">
 				<h2>Preview</h2>
-				<div className="htmlMode">
+				<div className="preview__header--htmlMode">
 					<h4>Mode HTML</h4>
 					<input type="checkbox" id="toggle" className="checkbox" onClick={handleMode} />
 					<label htmlFor="toggle" className="switch"></label>
 				</div>
 			</div>
 
-			<div id="preview"></div>
+			<div id="preview__content"></div>
 		</Fragment>
 	)
 }

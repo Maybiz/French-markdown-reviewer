@@ -14,35 +14,24 @@ body {
 	text-align: center;
 }
 
-textarea {
+#editor__content {
 	display: block;
-	width: 80%;
-	min-height: 300px;
 	margin: 0 auto 20px auto;
-	padding: 10px 20px;
 	font-size: 1.1em;
-	border: 1px solid #ccc;
-	border-bottom-left-radius: 0.5em;
-	border-bottom-right-radius: 0.5em;
 	outline: none;
 	resize: vertical;
 }
 
-#preview {
-	width: 80%;
-	min-height: 300px;
+#preview__content {
 	margin: 0 auto 30px auto;
-	padding: 10px 20px;
-	border: 1px solid #ccc;
-	border-bottom-left-radius: 0.5em;
-	border-bottom-right-radius: 0.5em;
 	background: #ffffff;
 
 	h1 {
 		margin-top: 0;
 	}
 
-	td, th {
+	td,
+	th {
 		border: 1px solid black;
 	}
 
@@ -57,6 +46,16 @@ textarea {
 	}
 }
 
+#editor__content,
+#preview__content {
+	width: 80%;
+	min-height: 300px;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
+
 .editor__header {
 	text-align: center;
 }
@@ -67,7 +66,7 @@ textarea {
 	align-items: center;
 	justify-content: center;
 
-	.htmlMode {
+	&--htmlMode {
 		position: absolute;
 		right: 10px;
 		height: 30px;
@@ -92,36 +91,37 @@ textarea {
 	background: #eaecec;
 }
 
-
-.switch { 
-	position : relative;
+.switch {
+	position: relative;
 	top: 3px;
-   display : inline-block;
-   width : 40px;
-   height : 20px;
-   background-color: grey;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background-color: grey;
 	border-radius: 20px;
- }
 
- .switch::after {
-   content: '';
-   position: absolute;
-   width: 18px;
-   height: 18px;
-   border-radius: 50%;
-   background-color: white;
-   top: 1px; // TO GIVE AN EFFECT OF CIRCLE INSIDE SWITCH.
-   left: 1px;
-	transition: all 0.3s;
- }
+	&:after {
+		content: '';
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background-color: white;
+		top: 1px; // TO GIVE AN EFFECT OF CIRCLE INSIDE SWITCH.
+		left: 1px;
+		transition: all 0.3s;
+	}
+}
 
- .checkbox:checked + .switch::after {
-   left : 20px; 
- }
- .checkbox:checked + .switch {
-   background-color: #7983ff;
- }
 
- .checkbox  {
-	 display: none;
- }
+
+.checkbox:checked + .switch::after {
+	left: 20px;
+}
+.checkbox:checked + .switch {
+	background-color: #7983ff;
+}
+
+.checkbox {
+	display: none;
+}
