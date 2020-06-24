@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import { connect } from 'react-redux'
 import addInput from '../actions/actions'
 
@@ -60,18 +60,33 @@ Et ici. | Okay. | Je pense qu’on a compris !
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)`
 
+   const editor = document.getElementById('editor')
+
+   const [inputPosition, setInputPosition] = useState('')
+
 	const handleChange = e => {
 		addNewInput(e.target.value)
 	}
 
+   const handleLineBreak = e => {
+      setInputPosition(editor.selectionStart)
+      if(e.keyCode === 13) {
+         e.preventDefault()
+         addNewInput(editor.value.slice(0, inputPosition) + '<br>' + editor.value.slice(inputPosition))
+      }
+
+      
+
+   }
+
 	useEffect(() => {
-		addNewInput(startingText)
+      addNewInput(startingText)
 	}, [])
 
 	return (
 		<Fragment>
 			<h2 className="editor__header">Editeur</h2>
-			<textarea id="editor" value={input.reducers} onChange={handleChange}></textarea>
+			<textarea id="editor" value={input.reducers} onChange={handleChange} onKeyDown={handleLineBreak} onClick={handleLineBreak}></textarea>
 		</Fragment>
 	)
 }
