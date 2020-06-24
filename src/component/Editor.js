@@ -17,7 +17,48 @@ const mapDispatchToProps = dispatch => {
 }
 
 const Editor = ({ addNewInput, input }) => {
-	const startingText = '# Welcome to my React Markdown Previewer!'
+   const startingText = 
+`# Bienvenu sur mon editeur Markdown !
+## C’est un heading H2
+### Ici un heading H3 et pleins d’autres choses ci dessous …
+
+Ici un peu de code, \`<div></div>\`, entre 2 backticks.
+
+\`\`\`
+// Ceci est un code sur plusieurs lignes:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+Il est aussi possible de faire du texte en **gras**... 
+En _italique_.
+Les **_deux_** ...
+Ou même ~~complètement barré !~~
+
+Il y a aussi des liens [links](https://www.ladreyt.fr), et les
+> Citations !
+
+Et si vous êtes un peu fou, des tableaux :
+
+Header 1 | Header  2 | Encore un header ...
+------------ | ------------- | ------------- 
+Le contenu peut | être ici, ou il | peut être ici ....
+Et ici. | Okay. | Je pense qu’on a compris !
+
+- Et bien sûre il y a les listes
+  - Certaines sont à puces.
+     - Avec différents niveaux d’indentation.
+
+1. Il y a les listes ordonnées aussi
+1. Pour les utiliser, il faut juste écrire “1” !
+1. Mais la liste continu ...
+- Même si j’utilise - ou *
+* Et pour finir : les images intégrées
+
+![React Logo w/ Text](https://goo.gl/Umyytc)`
 
 	const handleChange = e => {
 		addNewInput(e.target.value)
